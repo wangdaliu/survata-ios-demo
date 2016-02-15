@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dS-7t-YAQ">
+                                <rect key="frame" x="15" y="15" width="570" height="570"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">In a crisp, pristine suit, with alcohol on his breath, Frank Sinatra managed to rise from the tough streets of an immigrant neighborhood to become the greatest singer and most captivating personality of the 20th century. He was a rock star before the advent of rock and roll and a fashion icon whose style has endured into the 21st century. He cavorted with beautiful and renowned starlets like Lauren Bacall, Marilyn Monroe, Judy Garland and Angie Dickinson. He had several engagements and four wives, including Mia Farrow and Ava Gardner. He was friends with the likes of Humphrey Bogart, Katharine Hepburn, Shirley Maclaine, Spencer Tracy, Cary Grant, Dean Martin, Sammy Davis Jr. and Peter Lawford. He was connected to mafiosos Lucky Luciano, Sam Giancana and Willie Moretti, while at the same time close to presidents John F. Kennedy, Franklin Roosevelt and Ronald Reagan.
+
+He was famous, sexy, and beloved, as well as lonely, manic and harsh. He abused drugs and alcohol and was a notorious gambler and philanderer. His relationships were as damned as they were beautiful, and his desire to avoid boredom and loneliness nearly destroyed him and his career. Perhaps it was Sinatra’s innate loneliness that drove him to captivate millions and millions of people, yet it was his charisma, attitude and talent that gave him the ability to do so. It is because of both his charms and his faults that years after his death the legend and popularity of Old Blue Eyes is unwavering. The son of Italian immigrants, he would rise to epitomize fame, fortune and the American dream while revolutionizing popular music and setting the stage for Elvis Presley’s and The Beatles’ rock stardom. From his birth (Dec. 12, 1915) to his death (May 14, 1998) Sinatra fought, sometimes violently, to ensure his success and his place in history.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8R-g9-qD9" customClass="GradientView" customModule="Demo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t8z-xC-Xep">
+                                        <rect key="frame" x="290" y="538" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qir-qY-mTx">
+                                        <rect key="frame" x="20" y="526" width="560" height="44"/>
+                                        <color key="backgroundColor" red="0.90884560032894501" green="0.16912520559210525" blue="0.15887129934210525" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="KSD-Bt-hg0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <size key="titleShadowOffset" width="0.5" height="0.5"/>
+                                        <state key="normal" title="Complete 10-second survey to read full article!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startSurvey" destination="BYZ-38-t0r" eventType="touchUpInside" id="3d5-7Q-Dl0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="t8z-xC-Xep" firstAttribute="centerY" secondItem="qir-qY-mTx" secondAttribute="centerY" id="7pW-ao-B7B"/>
+                                    <constraint firstItem="qir-qY-mTx" firstAttribute="leading" secondItem="m8R-g9-qD9" secondAttribute="leading" constant="20" id="Qqf-yQ-q4C"/>
+                                    <constraint firstItem="t8z-xC-Xep" firstAttribute="centerX" secondItem="qir-qY-mTx" secondAttribute="centerX" id="dm3-Ow-eOu"/>
+                                    <constraint firstItem="qir-qY-mTx" firstAttribute="centerX" secondItem="m8R-g9-qD9" secondAttribute="centerX" id="nMa-fC-yff"/>
+                                    <constraint firstItem="qir-qY-mTx" firstAttribute="centerY" secondItem="m8R-g9-qD9" secondAttribute="centerY" id="qJW-5s-675"/>
+                                    <constraint firstAttribute="bottom" secondItem="qir-qY-mTx" secondAttribute="bottom" constant="30" id="tRC-J5-gFH"/>
+                                    <constraint firstAttribute="trailing" secondItem="qir-qY-mTx" secondAttribute="trailing" constant="277" id="yGV-u2-rlO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color1">
+                                        <color key="value" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color2">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="loc1">
+                                        <point key="value" x="0.5" y="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="loc2">
+                                        <point key="value" x="0.5" y="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qJW-5s-675"/>
+                                        <exclude reference="yGV-u2-rlO"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7dS-7t-YAQ" secondAttribute="trailing" constant="15" id="2Aw-bH-9Kg"/>
+                            <constraint firstItem="7dS-7t-YAQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="Sje-oo-hlI"/>
+                            <constraint firstAttribute="trailing" secondItem="m8R-g9-qD9" secondAttribute="trailing" id="ZjV-Zy-68o"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="m8R-g9-qD9" secondAttribute="bottom" id="f0k-cZ-gNm"/>
+                            <constraint firstItem="7dS-7t-YAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="fKo-Jq-nq5"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="7dS-7t-YAQ" secondAttribute="bottom" constant="15" id="jNt-3n-UUw"/>
+                            <constraint firstItem="m8R-g9-qD9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="wDh-ud-OzR"/>
+                            <constraint firstItem="m8R-g9-qD9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xet-0t-B01"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="surveyButton" destination="qir-qY-mTx" id="Jea-Rq-QKP"/>
+                        <outlet property="surveyIndicator" destination="t8z-xC-Xep" id="Aar-0U-jl5"/>
+                        <outlet property="surveyMask" destination="m8R-g9-qD9" id="hsq-SR-P94"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
