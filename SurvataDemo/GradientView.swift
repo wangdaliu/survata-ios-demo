@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-@objc public class GradientView: UIView {
+public class GradientView: UIView {
 	@IBInspectable var color1: UIColor = UIColor.whiteColor() { didSet { setNeedsDisplay() } }
 	@IBInspectable var color2: UIColor = UIColor.whiteColor() { didSet { setNeedsDisplay() } }
 	@IBInspectable var loc1: CGPoint = CGPointMake(0, 0) { didSet { setNeedsDisplay() } }
