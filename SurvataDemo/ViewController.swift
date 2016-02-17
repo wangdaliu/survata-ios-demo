@@ -6,38 +6,51 @@
 //  Copyright © 2016 Survata. All rights reserved.
 //
 
+import CoreLocation
 import Survata
 
-@IBDesignable
-public class GradientView: UIView {
-	@IBInspectable public var color1: UIColor = UIColor.whiteColor() { didSet { setNeedsDisplay() } }
-	@IBInspectable public var color2: UIColor = UIColor.whiteColor() { didSet { setNeedsDisplay() } }
-	@IBInspectable public var loc1: CGPoint = CGPointMake(0, 0) { didSet { setNeedsDisplay() } }
-	@IBInspectable public var loc2: CGPoint = CGPointMake(1, 1) { didSet { setNeedsDisplay() } }
+class ViewController: UIViewController, CLLocationManagerDelegate {
 	
-	override public func drawRect(rect: CGRect) {
-		let context = UIGraphicsGetCurrentContext()
-		CGContextSaveGState(context)
-		let gradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [color1.CGColor, color2.CGColor], [0, 1])
-		CGContextDrawLinearGradient(context, gradient,
-			CGPointMake(rect.size.width * loc1.x, rect.size.height * loc1.y),
-			CGPointMake(rect.size.width * loc2.x, rect.size.height * loc2.y),
-			CGGradientDrawingOptions.DrawsBeforeStartLocation.union(CGGradientDrawingOptions.DrawsAfterEndLocation))
-		CGContextRestoreGState(context)
-		super.drawRect(rect)
-	}
-}
-
-class ViewController: UIViewController {
-	
-	@IBOutlet weak var surveyMask: GradientView!
+	@IBOutlet weak var surveyMask: UIView!
 	@IBOutlet weak var surveyIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var surveyButton: UIButton!
 	
 	var created = false
+	var locationManager: CLLocationManager!
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		createSurvey()
+		if CLLocationManager.authorizationStatus() != .NotDetermined {
+			locationManager = CLLocationManager()
+			locationManager.delegate = self
+			locationManager.requestWhenInUseAuthorization()
+		} else {
+			createSurvey()
+		}
+	}
+	
+	func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+		if status == .AuthorizedWhenInUse {
+			createSurvey()
+		}
+		locationManager = nil
+	}
+	
+	override func canBecomeFirstResponder() -> Bool {
+		return true
+	}
+	
+	override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+		if motion == .MotionShake {
+			let controller = UIAlertController(title: "Reset Demo?", message: nil, preferredStyle: .Alert)
+			let option = UIAlertAction(title: "Reset", style: .Destructive) {[weak self] _ in
+				guard let window = self?.view.window, storyboard = self?.storyboard else { return }
+				NSHTTPCookieStorage.sharedHTTPCookieStorage().removeCookiesSinceDate(NSDate(timeIntervalSince1970: 0))
+				window.rootViewController = storyboard.instantiateInitialViewController()
+			}
+			controller.addAction(option)
+			controller.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+			self.presentViewController(controller, animated: true, completion: nil)
+		}
 	}
 	
 	func showFull() {

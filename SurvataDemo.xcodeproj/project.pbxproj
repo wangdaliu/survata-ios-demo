@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72798F1098AB0C11A13F0BB5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F844161360229629C84295 /* Pods.framework */; };
+		CF36878A1C73059100044CA4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3687891C73059100044CA4 /* GradientView.swift */; };
 		CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */; };
 		CF955ACF1C71B0B8002AEBEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACE1C71B0B8002AEBEA /* ViewController.swift */; };
 		CF955AD21C71B0B8002AEBEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF955AD01C71B0B8002AEBEA /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		16F844161360229629C84295 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C1685054CE145D239A0241 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CF3687891C73059100044CA4 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CF955AC91C71B0B8002AEBEA /* SurvataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurvataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF955ACE1C71B0B8002AEBEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */,
 				CF955ACE1C71B0B8002AEBEA /* ViewController.swift */,
+				CF3687891C73059100044CA4 /* GradientView.swift */,
 				CF955AD01C71B0B8002AEBEA /* Main.storyboard */,
 				CF955AD31C71B0B8002AEBEA /* Assets.xcassets */,
 				CF955AD51C71B0B8002AEBEA /* LaunchScreen.storyboard */,
@@ -101,6 +104,7 @@
 				CF955AC71C71B0B8002AEBEA /* Resources */,
 				B2AA768EE967ABA4C47C1997 /* Embed Pods Frameworks */,
 				663901497C0855CC2B1A1359 /* Copy Pods Resources */,
+				CF44DBC11C7407250095D06D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -123,6 +127,7 @@
 				TargetAttributes = {
 					CF955AC81C71B0B8002AEBEA = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 6AM6RAJ294;
 					};
 				};
 			};
@@ -203,6 +208,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CF44DBC11C7407250095D06D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,6 +230,7 @@
 			files = (
 				CF955ACF1C71B0B8002AEBEA /* ViewController.swift in Sources */,
 				CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */,
+				CF36878A1C73059100044CA4 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +344,11 @@
 			baseConfigurationReference = 97C1685054CE145D239A0241 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurvataDemo/Info.plist;
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.interactivelabs.SurvataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,7 +360,11 @@
 			baseConfigurationReference = DE785D98BBDF3951932D1A68 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurvataDemo/Info.plist;
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.interactivelabs.SurvataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
