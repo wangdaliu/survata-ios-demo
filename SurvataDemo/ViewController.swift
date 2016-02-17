@@ -6,8 +6,8 @@
 //  Copyright © 2016 Survata. All rights reserved.
 //
 
-import CoreLocation
 import Survata
+import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 	
