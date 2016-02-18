@@ -66,7 +66,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	@IBAction func startSurvey() {
-		Survey.presentFromController(self, brand: "", explainer: "") {[weak self] result in
+		Survey.presentFromController(self, option: SurveyOption()) {[weak self] result in
 			switch result {
 			case .Completed:
 				self?.showFull()
