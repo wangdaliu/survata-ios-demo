@@ -11,14 +11,17 @@ import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+	
 	var window: UIWindow?
-
+	
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		BITHockeyManager.sharedHockeyManager().configureWithIdentifier("cc8f5f27308a471c804a6f9dc73eec5d")
-		// Do some additional configuration if needed here
-		BITHockeyManager.sharedHockeyManager().startManager()
-		BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+		
+		if TARGET_OS_SIMULATOR == 0 {
+			BITHockeyManager.sharedHockeyManager().configureWithIdentifier("cc8f5f27308a471c804a6f9dc73eec5d")
+			// Do some additional configuration if needed here
+			BITHockeyManager.sharedHockeyManager().startManager()
+			BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+		}
 		return true
 	}
 }
