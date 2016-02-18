@@ -43,6 +43,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
 		if motion == .MotionShake {
+			if presentedViewController != nil { return }
 			let controller = UIAlertController(title: "Reset Demo?", message: nil, preferredStyle: .Alert)
 			let option = UIAlertAction(title: "Reset", style: .Destructive) {[weak self] _ in
 				guard let window = self?.view.window, storyboard = self?.storyboard else { return }
@@ -51,7 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 			}
 			controller.addAction(option)
 			controller.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-			self.presentViewController(controller, animated: true, completion: nil)
+			presentViewController(controller, animated: true, completion: nil)
 		}
 	}
 	
@@ -78,7 +79,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	func createSurvey() {
 		if created { return }
-		print("Survey.create...")
 		Survey.create("survata-test") {[weak self] result in
 			self?.created = true
 			switch result {
