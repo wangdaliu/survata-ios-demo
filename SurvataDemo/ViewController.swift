@@ -19,7 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	var locationManager: CLLocationManager!
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		if CLLocationManager.authorizationStatus() != .NotDetermined {
+		if CLLocationManager.authorizationStatus() == .NotDetermined {
 			locationManager = CLLocationManager()
 			locationManager.delegate = self
 			locationManager.requestWhenInUseAuthorization()
@@ -32,7 +32,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		if status == .AuthorizedWhenInUse {
 			createSurvey()
 		}
-		locationManager = nil
+		if status != .NotDetermined {
+			locationManager = nil
+		}
 	}
 	
 	override func canBecomeFirstResponder() -> Bool {
@@ -76,6 +78,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	func createSurvey() {
 		if created { return }
+		print("Survey.create...")
 		Survey.create("survata-test") {[weak self] result in
 			self?.created = true
 			switch result {
