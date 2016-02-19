@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		72798F1098AB0C11A13F0BB5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F844161360229629C84295 /* Pods.framework */; };
+		CF26A2EB1C76EB960063936B /* Field.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF26A2EA1C76EB960063936B /* Field.xib */; };
+		CF26A2ED1C76EBB90063936B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF26A2EC1C76EBB90063936B /* Settings.swift */; };
 		CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */; };
-		CF955ACF1C71B0B8002AEBEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACE1C71B0B8002AEBEA /* ViewController.swift */; };
+		CF955ACF1C71B0B8002AEBEA /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACE1C71B0B8002AEBEA /* Demo.swift */; };
 		CF955AD21C71B0B8002AEBEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF955AD01C71B0B8002AEBEA /* Main.storyboard */; };
 		CF955AD41C71B0B8002AEBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF955AD31C71B0B8002AEBEA /* Assets.xcassets */; };
 		CF955AD71C71B0B8002AEBEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF955AD51C71B0B8002AEBEA /* LaunchScreen.storyboard */; };
@@ -18,9 +20,11 @@
 /* Begin PBXFileReference section */
 		16F844161360229629C84295 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C1685054CE145D239A0241 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CF26A2EA1C76EB960063936B /* Field.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Field.xib; sourceTree = "<group>"; };
+		CF26A2EC1C76EBB90063936B /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CF955AC91C71B0B8002AEBEA /* SurvataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurvataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF955ACE1C71B0B8002AEBEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF955ACE1C71B0B8002AEBEA /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		CF955AD11C71B0B8002AEBEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF955AD31C71B0B8002AEBEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF955AD61C71B0B8002AEBEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */,
-				CF955ACE1C71B0B8002AEBEA /* ViewController.swift */,
+				CF26A2EA1C76EB960063936B /* Field.xib */,
+				CF955ACE1C71B0B8002AEBEA /* Demo.swift */,
+				CF26A2EC1C76EBB90063936B /* Settings.swift */,
 				CF955AD01C71B0B8002AEBEA /* Main.storyboard */,
 				CF955AD31C71B0B8002AEBEA /* Assets.xcassets */,
 				CF955AD51C71B0B8002AEBEA /* LaunchScreen.storyboard */,
@@ -154,6 +160,7 @@
 				CF955AD71C71B0B8002AEBEA /* LaunchScreen.storyboard in Resources */,
 				CF955AD41C71B0B8002AEBEA /* Assets.xcassets in Resources */,
 				CF955AD21C71B0B8002AEBEA /* Main.storyboard in Resources */,
+				CF26A2EB1C76EB960063936B /* Field.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF955ACF1C71B0B8002AEBEA /* ViewController.swift in Sources */,
+				CF26A2ED1C76EBB90063936B /* Settings.swift in Sources */,
+				CF955ACF1C71B0B8002AEBEA /* Demo.swift in Sources */,
 				CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

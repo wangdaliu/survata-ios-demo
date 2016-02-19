@@ -9,7 +9,7 @@
 import Survata
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class DemoViewController: UIViewController, CLLocationManagerDelegate {
 	
 	@IBOutlet weak var surveyMask: UIView!
 	@IBOutlet weak var surveyIndicator: UIActivityIndicatorView!
@@ -67,7 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	@IBAction func startSurvey() {
-		Survey.presentFromController(self, option: SurveyOption()) {[weak self] result in
+		Survey.presentFromController(self) {[weak self] result in
 			switch result {
 			case .Completed:
 				self?.showFull()
@@ -79,7 +79,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	
 	func createSurvey() {
 		if created { return }
-		Survey.create("survata-test") {[weak self] result in
+		let option = SurveyOption(publisher: Settings.publisherId)
+		option.preview = Settings.previewId
+		option.zipcode = Settings.forceZipcode
+		option.sendZipcode = Settings.sendZipcode
+		option.contentName = Settings.contentName
+		
+		Survey.create(option) {[weak self] result in
 			self?.created = true
 			switch result {
 			case .Available:

@@ -9,7 +9,7 @@
         <!--Settings-->
         <scene sceneID="a63-2O-r7b">
             <objects>
-                <viewController id="15w-RE-cDR" sceneMemberID="viewController">
+                <viewController id="15w-RE-cDR" customClass="SettingsViewController" customModule="SurvataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eKe-OE-Rp7"/>
                         <viewControllerLayoutGuide type="bottom" id="Uy0-bf-cQc"/>
@@ -17,9 +17,93 @@
                     <view key="view" contentMode="scaleToFill" id="whq-Vt-VBy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfU-MA-wyg">
+                                <rect key="frame" x="20" y="28" width="560" height="515"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-fo-TpT" customClass="Field" customModule="SurvataDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20" width="600" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="publisher id"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="pattern" value=".+"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasToggle" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bp-7V-MPX" customClass="Field" customModule="SurvataDemo" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="600" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="preview id"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="pattern" value=".+"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasToggle" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gpk-d2-KGc" customClass="Field" customModule="SurvataDemo" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="600" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="content name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="pattern" value=".+"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-RZ-aMY" customClass="Field" customModule="SurvataDemo" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="600" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="zipcode"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="pattern" value=".+"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9h-a5-Qj5">
+                                        <rect key="frame" x="257" y="50" width="46" height="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="reset" destination="15w-RE-cDR" eventType="touchUpInside" id="Crq-Op-79J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VKf-RZ-aMY" firstAttribute="top" secondItem="Gpk-d2-KGc" secondAttribute="bottom" id="4ll-mA-mVb"/>
+                                    <constraint firstAttribute="bottom" secondItem="B9h-a5-Qj5" secondAttribute="bottom" constant="20" symbolic="YES" id="9lp-9t-Tub"/>
+                                    <constraint firstAttribute="trailing" secondItem="T7Y-fo-TpT" secondAttribute="trailing" constant="15" id="AfA-Qq-96g"/>
+                                    <constraint firstItem="1bp-7V-MPX" firstAttribute="top" secondItem="T7Y-fo-TpT" secondAttribute="bottom" id="ESf-cN-RKT"/>
+                                    <constraint firstItem="B9h-a5-Qj5" firstAttribute="centerX" secondItem="lfU-MA-wyg" secondAttribute="centerX" id="HU7-NJ-3jR"/>
+                                    <constraint firstItem="Gpk-d2-KGc" firstAttribute="trailing" secondItem="1bp-7V-MPX" secondAttribute="trailing" id="I9i-Zi-Aje"/>
+                                    <constraint firstItem="B9h-a5-Qj5" firstAttribute="top" secondItem="VKf-RZ-aMY" secondAttribute="bottom" constant="30" id="Kxk-uP-ct4"/>
+                                    <constraint firstItem="1bp-7V-MPX" firstAttribute="trailing" secondItem="T7Y-fo-TpT" secondAttribute="trailing" id="WzS-jp-5yd"/>
+                                    <constraint firstItem="Gpk-d2-KGc" firstAttribute="top" secondItem="1bp-7V-MPX" secondAttribute="bottom" id="ZKF-Mp-qmA"/>
+                                    <constraint firstItem="T7Y-fo-TpT" firstAttribute="top" secondItem="lfU-MA-wyg" secondAttribute="top" constant="20" symbolic="YES" id="fyZ-V1-b5S"/>
+                                    <constraint firstItem="Gpk-d2-KGc" firstAttribute="leading" secondItem="1bp-7V-MPX" secondAttribute="leading" id="hCb-Ju-5Od"/>
+                                    <constraint firstAttribute="bottom" secondItem="VKf-RZ-aMY" secondAttribute="bottom" id="jNN-Pa-sfQ"/>
+                                    <constraint firstItem="VKf-RZ-aMY" firstAttribute="trailing" secondItem="Gpk-d2-KGc" secondAttribute="trailing" id="mQF-lO-Xqt"/>
+                                    <constraint firstItem="VKf-RZ-aMY" firstAttribute="leading" secondItem="Gpk-d2-KGc" secondAttribute="leading" id="mQx-39-d1i"/>
+                                    <constraint firstItem="1bp-7V-MPX" firstAttribute="leading" secondItem="T7Y-fo-TpT" secondAttribute="leading" id="pJN-2N-iV7"/>
+                                    <constraint firstItem="T7Y-fo-TpT" firstAttribute="leading" secondItem="lfU-MA-wyg" secondAttribute="leading" constant="15" id="xd3-hX-hoP"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jNN-Pa-sfQ"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lfU-MA-wyg" firstAttribute="top" secondItem="eKe-OE-Rp7" secondAttribute="bottom" constant="8" symbolic="YES" id="5e6-QI-nGC"/>
+                            <constraint firstItem="Uy0-bf-cQc" firstAttribute="top" secondItem="lfU-MA-wyg" secondAttribute="bottom" constant="8" symbolic="YES" id="7HJ-Vs-5xD"/>
+                            <constraint firstAttribute="trailing" secondItem="lfU-MA-wyg" secondAttribute="trailing" id="H2w-Be-ZRq"/>
+                            <constraint firstItem="T7Y-fo-TpT" firstAttribute="width" secondItem="whq-Vt-VBy" secondAttribute="width" constant="-30" id="Ldi-eS-adx"/>
+                            <constraint firstAttribute="leading" secondItem="lfU-MA-wyg" secondAttribute="leading" id="g9h-HJ-079"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="sJ6-gI-Qal"/>
+                    <connections>
+                        <outlet property="contentNameField" destination="Gpk-d2-KGc" id="Auv-cp-oMa"/>
+                        <outlet property="previewField" destination="1bp-7V-MPX" id="Rwd-L3-Xta"/>
+                        <outlet property="publisherIdField" destination="T7Y-fo-TpT" id="62H-KC-Rar"/>
+                        <outlet property="zipcodeField" destination="VKf-RZ-aMY" id="5WZ-gm-GTA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3TV-ak-GTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,7 +130,7 @@
         <!--Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SurvataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DemoViewController" customModule="SurvataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
