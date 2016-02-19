@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="As1-wx-kK6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settings-->
+        <scene sceneID="a63-2O-r7b">
+            <objects>
+                <viewController id="15w-RE-cDR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eKe-OE-Rp7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uy0-bf-cQc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="whq-Vt-VBy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="sJ6-gI-Qal"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3TV-ak-GTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52" y="195"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="soV-fR-cWR">
+            <objects>
+                <tabBarController id="As1-wx-kK6" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="a4l-Bc-tDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="xcz-an-GDT"/>
+                        <segue destination="15w-RE-cDR" kind="relationship" relationship="viewControllers" id="Mnc-wR-HMO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ggk-Rb-LKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-872" y="-135"/>
+        </scene>
+        <!--Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SurvataDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,14 +64,14 @@ He was famous, sexy, and beloved, as well as lonely, manic and harsh. He abused 
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8R-g9-qD9" customClass="GradientView" customModule="SurvataDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8R-g9-qD9" customClass="GradientView" customModule="Greycats">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <subviews>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t8z-xC-Xep">
-                                        <rect key="frame" x="290" y="538" width="20" height="20"/>
+                                        <rect key="frame" x="290" y="469" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qir-qY-mTx">
-                                        <rect key="frame" x="20" y="526" width="560" height="44"/>
+                                        <rect key="frame" x="20" y="457" width="560" height="44"/>
                                         <color key="backgroundColor" red="0.90884560032894501" green="0.16912520559210525" blue="0.15887129934210525" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="KSD-Bt-hg0"/>
@@ -84,15 +121,16 @@ He was famous, sexy, and beloved, as well as lonely, manic and harsh. He abused 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7dS-7t-YAQ" secondAttribute="trailing" constant="15" id="2Aw-bH-9Kg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m8R-g9-qD9" secondAttribute="bottom" id="9Wn-2x-UI5"/>
                             <constraint firstItem="7dS-7t-YAQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="Sje-oo-hlI"/>
                             <constraint firstAttribute="trailing" secondItem="m8R-g9-qD9" secondAttribute="trailing" id="ZjV-Zy-68o"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="m8R-g9-qD9" secondAttribute="bottom" id="f0k-cZ-gNm"/>
                             <constraint firstItem="7dS-7t-YAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="fKo-Jq-nq5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="7dS-7t-YAQ" secondAttribute="bottom" constant="15" id="jNt-3n-UUw"/>
-                            <constraint firstItem="m8R-g9-qD9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="wDh-ud-OzR"/>
+                            <constraint firstItem="m8R-g9-qD9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tHc-58-Npk"/>
                             <constraint firstItem="m8R-g9-qD9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xet-0t-B01"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Demo" id="9cb-AR-5Rp"/>
                     <connections>
                         <outlet property="surveyButton" destination="qir-qY-mTx" id="Jea-Rq-QKP"/>
                         <outlet property="surveyIndicator" destination="t8z-xC-Xep" id="Aar-0U-jl5"/>
@@ -101,6 +139,7 @@ He was famous, sexy, and beloved, as well as lonely, manic and harsh. He abused 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-52" y="-564"/>
         </scene>
     </scenes>
 </document>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		72798F1098AB0C11A13F0BB5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F844161360229629C84295 /* Pods.framework */; };
-		CF36878A1C73059100044CA4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3687891C73059100044CA4 /* GradientView.swift */; };
 		CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */; };
 		CF955ACF1C71B0B8002AEBEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACE1C71B0B8002AEBEA /* ViewController.swift */; };
 		CF955AD21C71B0B8002AEBEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF955AD01C71B0B8002AEBEA /* Main.storyboard */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		16F844161360229629C84295 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C1685054CE145D239A0241 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CF3687891C73059100044CA4 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CF955AC91C71B0B8002AEBEA /* SurvataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurvataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF955ACE1C71B0B8002AEBEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 			children = (
 				CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */,
 				CF955ACE1C71B0B8002AEBEA /* ViewController.swift */,
-				CF3687891C73059100044CA4 /* GradientView.swift */,
 				CF955AD01C71B0B8002AEBEA /* Main.storyboard */,
 				CF955AD31C71B0B8002AEBEA /* Assets.xcassets */,
 				CF955AD51C71B0B8002AEBEA /* LaunchScreen.storyboard */,
@@ -230,7 +227,6 @@
 			files = (
 				CF955ACF1C71B0B8002AEBEA /* ViewController.swift in Sources */,
 				CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */,
-				CF36878A1C73059100044CA4 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
