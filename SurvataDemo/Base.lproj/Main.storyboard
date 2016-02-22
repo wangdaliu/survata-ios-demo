@@ -6,6 +6,25 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Test-->
+        <scene sceneID="4wS-pu-7eH">
+            <objects>
+                <viewController id="Vcj-Pq-lY7" customClass="TestViewController" customModule="SurvataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D0Z-Zd-fFQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="i3T-0w-JV3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RwR-Fh-OJx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Test" id="kQG-iq-kEk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmH-fd-e5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-621" y="699"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="a63-2O-r7b">
             <objects>
@@ -121,6 +140,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="xcz-an-GDT"/>
                         <segue destination="15w-RE-cDR" kind="relationship" relationship="viewControllers" id="Mnc-wR-HMO"/>
+                        <segue destination="Vcj-Pq-lY7" kind="relationship" relationship="viewControllers" id="m9w-wt-hVe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggk-Rb-LKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
