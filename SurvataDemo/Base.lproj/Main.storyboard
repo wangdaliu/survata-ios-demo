@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Test" id="kQG-iq-kEk"/>
+                    <tabBarItem key="tabBarItem" title="Test" image="music-7" id="kQG-iq-kEk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmH-fd-e5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,7 +116,7 @@
                             <constraint firstAttribute="leading" secondItem="lfU-MA-wyg" secondAttribute="leading" id="g9h-HJ-079"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="sJ6-gI-Qal"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear-7" id="sJ6-gI-Qal"/>
                     <connections>
                         <outlet property="contentNameField" destination="Gpk-d2-KGc" id="Auv-cp-oMa"/>
                         <outlet property="previewField" destination="1bp-7V-MPX" id="Rwd-L3-Xta"/>
@@ -234,7 +234,7 @@ He was famous, sexy, and beloved, as well as lonely, manic and harsh. He abused 
                             <constraint firstItem="m8R-g9-qD9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xet-0t-B01"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Demo" id="9cb-AR-5Rp"/>
+                    <tabBarItem key="tabBarItem" title="Demo" image="home-7" id="9cb-AR-5Rp"/>
                     <connections>
                         <outlet property="surveyButton" destination="qir-qY-mTx" id="Jea-Rq-QKP"/>
                         <outlet property="surveyIndicator" destination="t8z-xC-Xep" id="Aar-0U-jl5"/>
@@ -246,4 +246,9 @@ He was famous, sexy, and beloved, as well as lonely, manic and harsh. He abused 
             <point key="canvasLocation" x="-52" y="-564"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear-7" width="30" height="30"/>
+        <image name="home-7" width="30" height="30"/>
+        <image name="music-7" width="30" height="30"/>
+    </resources>
 </document>
