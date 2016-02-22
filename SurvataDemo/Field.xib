@@ -11,6 +11,7 @@
                 <outlet property="errorHeight" destination="DoE-NO-DIC" id="W7t-mr-UnT"/>
                 <outlet property="errorLabel" destination="0YL-9F-qD4" id="2hU-7J-Z5w"/>
                 <outlet property="field" destination="q8Q-Ym-26c" id="yeA-bl-S6k"/>
+                <outlet property="fieldHeight" destination="WOY-2R-Lm3" id="2PI-do-OCG"/>
                 <outlet property="line" destination="2Y7-8a-p8y" id="3vQ-3n-QvL"/>
                 <outlet property="redLine" destination="rgm-a2-Zou" id="Ycb-vB-k5T"/>
                 <outlet property="toggleSwitch" destination="DuA-lp-RpU" id="aQN-Zb-fuv"/>

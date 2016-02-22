@@ -18,6 +18,7 @@ struct Settings {
 
 class Field: FormField {
 	
+	@IBOutlet weak var fieldHeight: NSLayoutConstraint!
 	var onToggle: ((Bool) -> ())?
 	
 	@IBInspectable var hasToggle: Bool = true {
@@ -37,6 +38,8 @@ class Field: FormField {
 	
 	@IBAction func didToggle(sender: AnyObject) {
 		onToggle?(toggleSwitch.on)
+		fieldHeight.constant = toggleSwitch.on ? 32 : 0
+		UIView.animateWithDuration(0.25) { self.layoutIfNeeded() }
 	}
 }
 
