@@ -14,11 +14,11 @@
 @property (nonatomic, weak) IBOutlet UIView *surveyMask;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *surveyIndicator;
 @property (nonatomic, weak) IBOutlet UIButton *surveyButton;
+@property (nonatomic) SVSurvey *survey;
 @end
 
 @implementation ViewController
 {
-	BOOL created;
 	CLLocationManager *locationManager;
 }
 
@@ -42,7 +42,6 @@
 	}
 }
 
-
 - (void)showFull {
 	self.surveyMask.hidden = YES;
 }
@@ -55,7 +54,7 @@
 
 - (IBAction)startSurvey {
 	__weak __typeof(self) weakSelf = self;
-	[SVSurvey presentFromController:self completion:^(enum SVSurveyResult result) {
+	[survey createSurveyWall:self completion:^(enum SVSurveyResult result) {
 		if (result == SVSurveyResultCompleted) {
 			[weakSelf showFull];
 		} else {
@@ -65,14 +64,14 @@
 }
 
 - (void)createSurvey {
-	if (created) return;
+	if (survey) return;
 	SVSurveyOption *option = [[SVSurveyOption alloc] initWithPublisher:@"survata-test"];
 	option.preview = @"46b140a358cd4fe7b425aa361b41bed9";
 	__weak __typeof(self) weakSelf = self;
-	[SVSurvey create:option completion:^(enum SVSurveyAvailability availability) {
+	survey = [[SVSurvey alloc] initWithOption:option];
+	[survey create:^(enum SVSurveyAvailability availability) {
 		__strong __typeof(weakSelf) strongSelf = weakSelf;
 		if (!strongSelf) return;
-		strongSelf->created = YES;
 		if (availability == SVSurveyAvailabilityAvailable) {
 			[weakSelf showSurveyButton];
 		} else {
