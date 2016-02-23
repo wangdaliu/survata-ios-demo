@@ -9,13 +9,26 @@
 import Survata
 import CoreLocation
 
+public class SurveyDebugOption: SurveyOption, SurveyDebugOptionProtocol {
+	public var preview: String?
+	public var zipcode: String?
+	public var sendZipcode: Bool = true
+
+	public override var json: [String: AnyObject] {
+		var option = super.json
+		option["preview"] = preview
+		return option
+	}
+}
+
 class DemoViewController: UIViewController, CLLocationManagerDelegate {
 	
 	@IBOutlet weak var surveyMask: UIView!
 	@IBOutlet weak var surveyIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var surveyButton: UIButton!
 	
-	var created = false
+	var survey: Survey!
+
 	var locationManager: CLLocationManager!
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
@@ -47,6 +60,7 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 			let controller = UIAlertController(title: "Reset Demo?", message: nil, preferredStyle: .Alert)
 			let option = UIAlertAction(title: "Reset", style: .Destructive) {[weak self] _ in
 				guard let window = self?.view.window, storyboard = self?.storyboard else { return }
+				self?.survey = nil
 				NSHTTPCookieStorage.sharedHTTPCookieStorage().removeCookiesSinceDate(NSDate(timeIntervalSince1970: 0))
 				window.rootViewController = storyboard.instantiateInitialViewController()
 			}
@@ -67,7 +81,7 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	@IBAction func startSurvey() {
-		Survey.presentFromController(self) {[weak self] result in
+		survey.createSurveyWall(self) {[weak self] result in
 			switch result {
 			case .Completed:
 				self?.showFull()
@@ -78,15 +92,14 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 	}
 	
 	func createSurvey() {
-		if created { return }
-		let option = SurveyOption(publisher: Settings.publisherId)
+		if survey != nil { return }
+		let option = SurveyDebugOption(publisher: Settings.publisherId)
 		option.preview = Settings.previewId
 		option.zipcode = Settings.forceZipcode
 		option.sendZipcode = Settings.sendZipcode
 		option.contentName = Settings.contentName
-		
-		Survey.create(option) {[weak self] result in
-			self?.created = true
+		survey = Survey(option: option)
+		survey.create {[weak self] result in
 			switch result {
 			case .Available:
 				self?.showSurveyButton()
