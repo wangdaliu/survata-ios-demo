@@ -54,7 +54,7 @@
 
 - (IBAction)startSurvey {
 	__weak __typeof(self) weakSelf = self;
-	[survey createSurveyWall:self completion:^(enum SVSurveyResult result) {
+	[_survey createSurveyWall:self completion:^(enum SVSurveyResult result) {
 		if (result == SVSurveyResultCompleted) {
 			[weakSelf showFull];
 		} else {
@@ -64,12 +64,11 @@
 }
 
 - (void)createSurvey {
-	if (survey) return;
+	if (_survey) return;
 	SVSurveyOption *option = [[SVSurveyOption alloc] initWithPublisher:@"survata-test"];
-	option.preview = @"46b140a358cd4fe7b425aa361b41bed9";
 	__weak __typeof(self) weakSelf = self;
-	survey = [[SVSurvey alloc] initWithOption:option];
-	[survey create:^(enum SVSurveyAvailability availability) {
+	_survey = [[SVSurvey alloc] initWithOption:option];
+	[_survey create:^(enum SVSurveyAvailability availability) {
 		__strong __typeof(weakSelf) strongSelf = weakSelf;
 		if (!strongSelf) return;
 		if (availability == SVSurveyAvailabilityAvailable) {

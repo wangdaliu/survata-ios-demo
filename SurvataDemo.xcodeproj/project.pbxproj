@@ -16,7 +16,6 @@
 		CF7CF7C61C7AAE3700859F87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7CF7C51C7AAE3700859F87 /* AppDelegate.m */; };
 		CF7CF7C91C7AAE3700859F87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7CF7C81C7AAE3700859F87 /* ViewController.m */; };
 		CF7CF7D11C7AAE3700859F87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7CF7CF1C7AAE3700859F87 /* LaunchScreen.storyboard */; };
-		CF7CF7D61C7AAEAB00859F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF955AD01C71B0B8002AEBEA /* Main.storyboard */; };
 		CF7CF7D91C7AAEDF00859F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7CF7D71C7AAEDF00859F87 /* Main.storyboard */; };
 		CF7CF7DD1C7AB60600859F87 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7CF7DC1C7AB60600859F87 /* Pods.framework */; };
 		CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955ACC1C71B0B8002AEBEA /* AppDelegate.swift */; };
@@ -239,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF7CF7D11C7AAE3700859F87 /* LaunchScreen.storyboard in Resources */,
-				CF7CF7D61C7AAEAB00859F87 /* Main.storyboard in Resources */,
 				CF7CF7D91C7AAEDF00859F87 /* Main.storyboard in Resources */,
 				CF58479B1C7AC531009D4BF8 /* Assets.xcassets in Resources */,
 			);
