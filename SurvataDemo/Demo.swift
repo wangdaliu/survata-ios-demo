@@ -24,11 +24,11 @@ public class SurveyDebugOption: SurveyOption, SurveyDebugOptionProtocol {
 }
 
 class DemoViewController: UIViewController, CLLocationManagerDelegate {
-	
+
 	@IBOutlet weak var surveyMask: UIView!
 	@IBOutlet weak var surveyIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var surveyButton: UIButton!
-	
+
 	var survey: Survey!
 
 	var locationManager: CLLocationManager!
@@ -42,7 +42,7 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 			createSurvey()
 		}
 	}
-	
+
 	func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		if status == .AuthorizedWhenInUse {
 			createSurvey()
@@ -51,11 +51,11 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 			locationManager = nil
 		}
 	}
-	
+
 	override func canBecomeFirstResponder() -> Bool {
 		return true
 	}
-	
+
 	override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
 		if motion == .MotionShake {
 			if presentedViewController != nil { return }
@@ -71,32 +71,40 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 			presentViewController(controller, animated: true, completion: nil)
 		}
 	}
-	
+
 	func showFull() {
 		surveyMask.hidden = true
 	}
-	
+
 	func showSurveyButton() {
 		surveyMask.hidden = false
 		surveyButton.hidden = false
 		surveyIndicator.stopAnimating()
 	}
-	
+
 	@IBAction func startSurvey() {
 		survey.createSurveyWall(self) {[weak self] result in
-			SVProgressHUD.showInfoWithStatus("'surveyWall' result: \(result)")
-			delay(1) {
+			delay(2) {
 				SVProgressHUD.dismiss()
 			}
 			switch result {
 			case .Completed:
+				SVProgressHUD.showInfoWithStatus("'surveyWall': completed")
 				self?.showFull()
-			default:
-				self?.showSurveyButton()
+				return
+			case .Canceled:
+				SVProgressHUD.showInfoWithStatus("'surveyWall': canceled")
+			case .CreditEarned:
+				SVProgressHUD.showInfoWithStatus("'surveyWall': credit earned")
+			case .NetworkNotAvailable:
+				SVProgressHUD.showInfoWithStatus("'surveyWall': network not available")
+			case .Skipped:
+				SVProgressHUD.showInfoWithStatus("'surveyWall': skipped")
 			}
+			self?.showSurveyButton()
 		}
 	}
-	
+
 	func createSurvey() {
 		if survey != nil { return }
 		let option = SurveyDebugOption(publisher: Settings.publisherId)
@@ -106,16 +114,23 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 		option.contentName = Settings.contentName
 		survey = Survey(option: option)
 		survey.create {[weak self] result in
-			SVProgressHUD.showInfoWithStatus("'/create' call result: \(result)")
-			delay(1) {
+			delay(2) {
 				SVProgressHUD.dismiss()
 			}
 			switch result {
 			case .Available:
+				SVProgressHUD.showInfoWithStatus("'/create' call result: available")
 				self?.showSurveyButton()
-			default:
-				self?.showFull()
+				return
+			case .NetworkNotAvailable:
+				SVProgressHUD.showInfoWithStatus("'/create' call result: network not available")
+
+			case .NotAvailable:
+				SVProgressHUD.showInfoWithStatus("'/create' call result: not available")
+			case .ServerError:
+				SVProgressHUD.showInfoWithStatus("'/create' call result: server error")
 			}
+			self?.showFull()
 		}
 	}
 }
