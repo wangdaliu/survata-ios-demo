@@ -84,6 +84,10 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 	
 	@IBAction func startSurvey() {
 		survey.createSurveyWall(self) {[weak self] result in
+			SVProgressHUD.showInfoWithStatus("'surveyWall' result: \(result)")
+			delay(1) {
+				SVProgressHUD.dismiss()
+			}
 			switch result {
 			case .Completed:
 				self?.showFull()
