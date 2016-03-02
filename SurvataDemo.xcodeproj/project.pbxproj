@@ -11,7 +11,6 @@
 		CF26A2EB1C76EB960063936B /* Field.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF26A2EA1C76EB960063936B /* Field.xib */; };
 		CF26A2ED1C76EBB90063936B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF26A2EC1C76EBB90063936B /* Settings.swift */; };
 		CF58479B1C7AC531009D4BF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF955AD31C71B0B8002AEBEA /* Assets.xcassets */; };
-		CF58479D1C7AC618009D4BF8 /* Youtube.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF58479C1C7AC618009D4BF8 /* Youtube.swift */; };
 		CF7CF7C31C7AAE3700859F87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7CF7C21C7AAE3700859F87 /* main.m */; };
 		CF7CF7C61C7AAE3700859F87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7CF7C51C7AAE3700859F87 /* AppDelegate.m */; };
 		CF7CF7C91C7AAE3700859F87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7CF7C81C7AAE3700859F87 /* ViewController.m */; };
@@ -30,7 +29,6 @@
 		97C1685054CE145D239A0241 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF26A2EA1C76EB960063936B /* Field.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Field.xib; sourceTree = "<group>"; };
 		CF26A2EC1C76EBB90063936B /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		CF58479C1C7AC618009D4BF8 /* Youtube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Youtube.swift; sourceTree = "<group>"; };
 		CF7CF7BF1C7AAE3700859F87 /* SurvataObjcDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurvataObjcDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7CF7C21C7AAE3700859F87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF7CF7C41C7AAE3700859F87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				CF26A2EA1C76EB960063936B /* Field.xib */,
 				CF955ACE1C71B0B8002AEBEA /* Demo.swift */,
 				CF26A2EC1C76EBB90063936B /* Settings.swift */,
-				CF58479C1C7AC618009D4BF8 /* Youtube.swift */,
 				CF955AD01C71B0B8002AEBEA /* Main.storyboard */,
 				CF955AD31C71B0B8002AEBEA /* Assets.xcassets */,
 				CF955AD51C71B0B8002AEBEA /* LaunchScreen.storyboard */,
@@ -374,7 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF26A2ED1C76EBB90063936B /* Settings.swift in Sources */,
-				CF58479D1C7AC618009D4BF8 /* Youtube.swift in Sources */,
 				CF955ACF1C71B0B8002AEBEA /* Demo.swift in Sources */,
 				CF955ACD1C71B0B8002AEBEA /* AppDelegate.swift in Sources */,
 			);

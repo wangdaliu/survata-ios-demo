@@ -8,6 +8,8 @@
 
 import Survata
 import CoreLocation
+import SVProgressHUD
+import Greycats
 
 public class SurveyDebugOption: SurveyOption, SurveyDebugOptionProtocol {
 	public var preview: String?
@@ -100,6 +102,10 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 		option.contentName = Settings.contentName
 		survey = Survey(option: option)
 		survey.create {[weak self] result in
+			SVProgressHUD.showInfoWithStatus("'/create' call result: \(result)")
+			delay(1) {
+				SVProgressHUD.dismiss()
+			}
 			switch result {
 			case .Available:
 				self?.showSurveyButton()
